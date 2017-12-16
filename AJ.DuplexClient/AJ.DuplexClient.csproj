@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2DE2FAE3-2A19-467D-9EBC-0592AB243F0B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AJ.DuplexClient</RootNamespace>
+    <AssemblyName>AJ.DuplexClient</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS; USE_HTTPx</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>..\AJ.DuplexSample.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\AJ.DuplexSample.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\Guard.cs" />
+    <Compile Include="Model\IGuiCallback.cs" />
+    <Compile Include="Adapters\ServiceAdapter.cs" />
+    <Compile Include="Model\Notification.cs" />
+    <Compile Include="Repositories\InformationRepository.cs" />
+    <Compile Include="Repositories\SubscriptionRepository.cs" />
+    <Compile Include="Service References\InformationServiceReferenceHttp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\InformationServiceReferenceNetTcp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SubscriptionsServiceReferenceHttp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SubscriptionsServiceReferenceNetTcp\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BooleanConverter.cs" />
+    <Compile Include="Views\BooleanConverterHelper.cs" />
+    <Compile Include="Views\InverseBooleanConverter.cs" />
+    <Compile Include="Views\ListBoxExtensions.cs" />
+    <Compile Include="Repositories\Mapper.cs" />
+    <Compile Include="Model\MessageItem.cs" />
+    <Compile Include="ViewModels\BindingBase.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\MainVM.cs" />
+    <Compile Include="ViewModels\ViewModelExtensions.cs" />
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\AJ.DuplexService.Information.MessageItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\InformationServiceReferenceHttp\AJ.DuplexClient.InformationServiceReferenceHttp.MessageItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InformationServiceReferenceHttp\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceHttp\datacontract.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceHttp\information.wsdl" />
+    <None Include="Service References\InformationServiceReferenceHttp\information.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceHttp\service.wsdl" />
+    <None Include="Service References\InformationServiceReferenceHttp\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceNetTcp\AJ.DuplexClient.InformationServiceReferenceNetTcp.MessageItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InformationServiceReferenceNetTcp\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceNetTcp\datacontract.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceNetTcp\information.wsdl" />
+    <None Include="Service References\InformationServiceReferenceNetTcp\information.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InformationServiceReferenceNetTcp\service.wsdl" />
+    <None Include="Service References\InformationServiceReferenceNetTcp\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\AJ.DuplexService.Subscriptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\service.wsdl" />
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\subscriptions.wsdl" />
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\subscriptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\AJ.DuplexService.Subscriptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\service.wsdl" />
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\subscriptions.wsdl" />
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\subscriptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>Properties\CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\InformationServiceReferenceHttp\" />
+    <WCFMetadataStorage Include="Service References\InformationServiceReferenceNetTcp\" />
+    <WCFMetadataStorage Include="Service References\SubscriptionsServiceReferenceHttp\" />
+    <WCFMetadataStorage Include="Service References\SubscriptionsServiceReferenceNetTcp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceHttp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceHttp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceHttp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceHttp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionsServiceReferenceNetTcp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceNetTcp\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceNetTcp\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InformationServiceReferenceNetTcp\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CustomDictionary.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>taskkill /f /fi "imagename eq $(TargetFileName)"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for AJ.DuplexSample" Description="Code analysis rules for AJ.DuplexSample." ToolsVersion="15.0">
+  <Include Path="allrules.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1011" Action="None" />
+    <Rule Id="CA1024" Action="None" />
+    <Rule Id="CA1026" Action="None" />
+    <Rule Id="CA1031" Action="None" />
+    <Rule Id="CA1045" Action="None" />
+    <Rule Id="CA1303" Action="None" />
+    <Rule Id="CA2210" Action="None" />
+    <Rule Id="CA2227" Action="None" />
+  </Rules>
+</RuleSet>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8aa71ef9-8652-4f2b-8d94-7c6e59bea9a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="subscriptions.wsdl" MetadataType="Wsdl" ID="98987a4b-99a0-42ad-b5cb-8ae35a0964d1" SourceId="1" SourceUrl="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="cfc842da-1c99-45fd-bc7f-4002293c7cc6" SourceId="1" SourceUrl="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" />
+    <MetadataFile FileName="subscriptions.xsd" MetadataType="Schema" ID="fb83b588-9cba-4f65-b2bb-c793bc0b2950" SourceId="1" SourceUrl="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="8dd4a748-b3c6-4b7b-ad9e-e90d957d1cff" SourceId="1" SourceUrl="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" />
+    <MetadataFile FileName="AJ.DuplexService.Subscriptions.xsd" MetadataType="Schema" ID="9f5b2d28-7fc2-4d1b-8dca-a290bcfc7299" SourceId="1" SourceUrl="http://localhost:9000/ajdotnet.duplexservice/subscriptions/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

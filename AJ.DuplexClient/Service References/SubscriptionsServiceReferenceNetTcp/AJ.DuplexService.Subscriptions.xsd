@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AJ.DuplexService.Subscriptions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AJ.DuplexService.Subscriptions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Notification">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ClientAdded" />
+      <xs:enumeration value="ClientRemoved" />
+      <xs:enumeration value="MessageAvailable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+</xs:schema>

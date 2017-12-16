@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cfa9007b-7b03-48f8-981c-8decf372a901" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="information.wsdl" MetadataType="Wsdl" ID="d9ad63e1-01d4-4415-9635-abd7df1c6fcd" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e929df0b-d0a5-4472-b3f9-ef7c11ee9ec6" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+    <MetadataFile FileName="information.xsd" MetadataType="Schema" ID="a7137b5a-bb27-4470-ad85-4c9a35581d48" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="4cf1047b-a374-43e1-8990-2f790994b646" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+    <MetadataFile FileName="datacontract.xsd" MetadataType="Schema" ID="e7b4866d-d6e4-4e1f-b4ef-615b07fc75cf" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="1e1f554e-4672-4c74-93fc-08c26dcb3d73" SourceId="1" SourceUrl="net.tcp://localhost:9001/ajdotnet.duplexservice/information/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
